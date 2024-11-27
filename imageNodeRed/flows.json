@@ -1,0 +1,565 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "12e3777751b83568",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "3.148.108.101",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "20343df4e864af87",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "3.147.82.16",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6fbdc6b25fd03434",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "94ba2f45029ba6ee",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "62f466227ddf3467",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "6fbdc6b25fd03434",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "baf5eb25de97db1b",
+        "type": "influxdb",
+        "hostname": "3.148.108.101",
+        "port": "8086",
+        "protocol": "http",
+        "database": "Data",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://3.148.108.101:8086",
+        "timeout": "10",
+        "rejectUnauthorized": false
+    },
+    {
+        "id": "816531ecc3571a24",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Humedad",
+        "group": "62f466227ddf3467",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "units",
+        "format": "{{value}} %",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#fe5858",
+            "#ecec6f",
+            "#87ff66"
+        ],
+        "seg1": "40",
+        "seg2": "50",
+        "diff": false,
+        "className": "",
+        "x": 700,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "afa4b7d3b1f5ffc6",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 2",
+        "func": "var porcentajeHumedad = parseInt(msg.payload);\nvar porcentajeNivel = parseInt(msg.bomba);\nvar msg = {};\nvar bombaActiva = \"0\";\nvar estadoLed = \"0\";\n\nif (porcentajeHumedad < 40) {\n    if (porcentajeNivel > 2) {\n        msg.payload = \"1\";\n        estadoLed = \"2\";\n        bombaActiva = \"1\";\n    } else {\n        estadoLed = \"3\";\n        msg.payload = \"0\";\n    }\n} else {\n    estadoLed = \"1\";\n    msg.payload = \"0\"; // O puedes no enviar nada\n}\n\n\nif (porcentajeNivel > 2) {\n    if (porcentajeHumedad < 40) {\n        msg.payload = \"1\";\n        estadoLed = \"2\";\n        bombaActiva = \"1\";\n    } else {\n        estadoLed = \"1\";\n        msg.payload = \"0\";\n    }\n} else {\n    estadoLed = \"3\";\n    msg.payload = \"0\";\n}\n\nmsg.banderaBomba = bombaActiva;\nmsg.estado = estadoLed;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 380,
+        "wires": [
+            [
+                "44b160b2ee798132",
+                "c316a0a5eb86a2bf",
+                "3e901e3792a02813"
+            ]
+        ]
+    },
+    {
+        "id": "44b160b2ee798132",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "bomba",
+        "topic": "/ThinkIOTDeiby/bomba",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "12e3777751b83568",
+        "x": 870,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "73b86139cc03dae0",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Nivel de Agua",
+        "group": "62f466227ddf3467",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Nivel de agua",
+        "label": "units",
+        "format": "{{value}} %",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 720,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "a174e10e06d574c4",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 3",
+        "func": "var nivel = parseFloat(msg.payload['/ThinkIOTDeiby/nivelAgua']); // Convierte el payload a un número flotante\nvar porcentaje = 0;\nvar message = {};\n\nfunction convertirP(valorSensor) {\n    const rangoMinimo = 1000; // Valor mínimo del sensor\n    const rangoMaximo = 4000; // Valor máximo del sensor\n\n    if (valorSensor < rangoMinimo) {\n        valorSensor = rangoMinimo;\n    } else if (valorSensor > rangoMaximo) {\n        valorSensor = rangoMaximo;\n    }\n\n    // Fórmula para calcular el porcentaje\n    const porcentaje = ((valorSensor - rangoMinimo) / (rangoMaximo - rangoMinimo)) * 100;\n    return porcentaje;\n}\n\nporcentaje = Math.round(convertirP(nivel));\n\n\nmessage.payload = String(porcentaje);\nreturn message;\n// return msg.payload;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 480,
+        "wires": [
+            [
+                "73b86139cc03dae0"
+            ]
+        ]
+    },
+    {
+        "id": "dd9293c9c3bc802f",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 4",
+        "func": "var humedad = parseFloat(msg.payload['/ThinkIOTDeiby/hum']); // Convierte el payload a un número flotante\n\nvar porcentaje = Math.round((1 - (humedad) / (4095)) * 100);\n\nvar nivel = parseFloat(msg.payload['/ThinkIOTDeiby/nivelAgua']); // Convierte el payload a un número flotante\nvar porcentajeNivel = 0;\n\nfunction convertirP(valorSensor) {\n    const rangoMinimo = 1000; // Valor mínimo del sensor\n    const rangoMaximo = 4000; // Valor máximo del sensor\n\n    if (valorSensor < rangoMinimo) {\n        valorSensor = rangoMinimo;\n    } else if (valorSensor > rangoMaximo) {\n        valorSensor = rangoMaximo;\n    }\n\n    // Fórmula para calcular el porcentaje\n    const porcentaje = ((valorSensor - rangoMinimo) / (rangoMaximo - rangoMinimo)) * 100;\n    return porcentaje;\n}\n\nporcentajeNivel = Math.round(convertirP(nivel));\n\nmsg.payload = String(porcentaje);\nmsg.bomba = String(porcentajeNivel);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [
+                "816531ecc3571a24",
+                "afa4b7d3b1f5ffc6",
+                "739bf2426ac288ec",
+                "9d2600874a75b1e4"
+            ]
+        ]
+    },
+    {
+        "id": "6857fa0beb41a292",
+        "type": "join",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "10",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 290,
+        "y": 440,
+        "wires": [
+            [
+                "dd9293c9c3bc802f",
+                "a174e10e06d574c4"
+            ]
+        ]
+    },
+    {
+        "id": "11867af464f142db",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Humedad",
+        "topic": "/ThinkIOTDeiby/hum",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "12e3777751b83568",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "6857fa0beb41a292"
+            ]
+        ]
+    },
+    {
+        "id": "73bbaf954d59547d",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Nivel del Agua",
+        "topic": "/ThinkIOTDeiby/nivelAgua",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "12e3777751b83568",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 500,
+        "wires": [
+            [
+                "6857fa0beb41a292"
+            ]
+        ]
+    },
+    {
+        "id": "739bf2426ac288ec",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 6",
+        "func": "var porcentajeNivel = parseInt(msg.bomba);\nvar msg = {};\n\nmsg.payload = porcentajeNivel;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 260,
+        "wires": [
+            [
+                "7cd169a9cbd4c5e5"
+            ]
+        ]
+    },
+    {
+        "id": "9d2600874a75b1e4",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 7",
+        "func": "var porcentajeHumedad = parseInt(msg.payload);\nvar msg = {};\n\nmsg.payload = porcentajeHumedad;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 200,
+        "wires": [
+            [
+                "5b9ac32c09b08edc"
+            ]
+        ]
+    },
+    {
+        "id": "c316a0a5eb86a2bf",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 8",
+        "func": "msg.payload = parseInt(msg.banderaBomba);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [
+                "b093f09667128cec"
+            ]
+        ]
+    },
+    {
+        "id": "7cd169a9cbd4c5e5",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "baf5eb25de97db1b",
+        "name": "",
+        "measurement": "NivelAgua",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "Grupo de Ingenieros IoT",
+        "bucket": "Data",
+        "x": 1150,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "5b9ac32c09b08edc",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "baf5eb25de97db1b",
+        "name": "",
+        "measurement": "Humedad",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "Grupo de Ingenieros IoT",
+        "bucket": "Data",
+        "x": 1140,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b093f09667128cec",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "baf5eb25de97db1b",
+        "name": "",
+        "measurement": "Bomba",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "s",
+        "retentionPolicyV18Flux": "",
+        "org": "Grupo de Ingenieros IoT",
+        "bucket": "Data",
+        "x": 1140,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3e901e3792a02813",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 9",
+        "func": "msg.payload = parseInt(msg.estado);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 440,
+        "wires": [
+            [
+                "6e23edc8b7d8cc4c"
+            ]
+        ]
+    },
+    {
+        "id": "6e23edc8b7d8cc4c",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "led",
+        "topic": "/ThinkIOTDeiby/led",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "12e3777751b83568",
+        "x": 1030,
+        "y": 440,
+        "wires": []
+    }
+]
