@@ -1,0 +1,79 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Plantilla de CloudFormation para desplegar el proyecto de IoT de monitoreo de una planta"
+
+Parameters:
+  AmiEc2:
+    Type: String
+    Default: "ami-0fff1b9a61dec8a5f"
+    Description: "AMI de la instancia"
+  VpcId:
+    Type: String
+    Default: "vpc-093b226fea2aa551e"
+
+Resources:
+  EmqxSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Grupo de seguridad para EMQX"
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: "-1"
+          FromPort: 0
+          ToPort: 0
+          CidrIp: "0.0.0.0/0"
+      SecurityGroupEgress:
+        - IpProtocol: "-1"
+          FromPort: 0
+          ToPort: 0
+          CidrIp: "0.0.0.0/0"
+
+  IotInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: !Ref AmiEc2
+      SecurityGroupIds:
+        - !Ref EmqxSecurityGroup
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo yum update -y
+          sudo yum install -y docker
+          sudo service docker start
+
+          sudo docker pull emqx/emqx:latest
+          sudo docker run -d --name emqx -p 1883:1883 -p 8083:8083 -p 18083:18083 emqx/emqx:latest
+
+          sudo docker pull nodered/node-red:latest
+          sudo docker run -d -p 1880:1880 --name mynodered nodered/node-red
+
+          sudo docker pull influxdb:latest
+          sudo docker run -d --name influxdb -p 8086:8086 influxdb:latest
+
+          sudo docker pull grafana/grafana
+          sudo docker run -d --name=grafana -p 3000:3000 grafana/grafana:latest
+
+      Tags:
+        - Key: Name
+          Value: emqx-instance-dev
+
+Outputs:
+  IpPublic:
+    Description: "IP Publica de la instancia"
+    Value: !GetAtt IotInstance.PublicIp
+
+  PageEmqx:
+    Description: "Direccion HTTP de la pagina EMQX"
+    Value: !Sub "http://${IotInstance.PublicIp}:18083"
+
+  NodeRed:
+    Description: "Direccion HTTP de la interfaz nodeRed"
+    Value: !Sub "http://${IotInstance.PublicIp}:1880"
+
+  InfluxDb:
+    Description: "Direccion HTTP de la interfaz InfluxDb"
+    Value: !Sub "http://${IotInstance.PublicIp}:18083"
+
+  Grafana:
+    Description: "Direccion HTTP de la interfaz Grafana"
+    Value: !Sub "http://${IotInstance.PublicIp}:18083"
